@@ -2,14 +2,14 @@ import React from 'react'
 import "./NewsBox.css"
 
 export default function NewsBox({size, article}) {
-  return (<>
-    {article !== undefined && 
+  return (
     <div className={size} >
-        <img src={article[0].urlToImage}  alt={article[0].title} />
+        <img src={article.urlToImage}  alt={article.title} />
+        <div className="shadowOverlay"></div>
         <div className="articleContent">
-            <h2 className="articleTitle">{article[0].title}</h2>
-            <p className="articleText">{article[0].description}</p>
+            <h2 className="articleTitle">{article.title}</h2>
+            {size !== "small" && <p className="articleText">{article.description}</p> }
         </div>
-    </div> }</>
+    </div>
   )
 }
